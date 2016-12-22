@@ -1,0 +1,8 @@
+/bower_components
+/node_modules
+/dist
+/.tmp
+/app/styles
+# This file is generated with grunt. See Gruntfile.js, task "replace" for more info.
+/app/components/app/app.parameters.js
+

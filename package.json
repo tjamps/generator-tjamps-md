@@ -1,0 +1,21 @@
+{
+  "name": "generator-tjamps-md",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Build amazing application with Angular Material. Heavily influenced by generator-angular <3. By tjamps.",
+  "repository": "https://github.com/tjamps/generator-tjamps-md",
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "tjamps",
+    "angular-material",
+    "grunt",
+    "less"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.2",
+    "yeoman-generator": "^1.0.1"
+  }
+}

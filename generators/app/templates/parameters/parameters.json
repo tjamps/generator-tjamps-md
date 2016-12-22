@@ -1,0 +1,8 @@
+{
+  "theme": {
+    "primaryPalette": "indigo",
+    "accentPalette": "pink",
+    "warnPalette": "deep-orange",
+    "backgroundPalette": "grey"
+  }
+}
