@@ -9,14 +9,6 @@ module.exports = Generator.extend({
     this.appName = _.kebabCase(path.basename(process.cwd()));
   },
 
-  prompting: function () {
-  },
-  configuring: function () {
-  },
-
-  default: function () {
-  },
-
   writing: function () {
     var params = {
       appName: this.appName
@@ -46,6 +38,4 @@ module.exports = Generator.extend({
   install: function () {
     this.installDependencies();
   },
-  end: function () {
-  }
 });
