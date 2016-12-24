@@ -82,9 +82,5 @@ module.exports = class extends Generator {
     }
 
     this.composeWith(require.resolve('../' + this.params.generator), {componentName: this.params.component});
-    // List of generators that only require the component name as parameter.
-    // var simpleParams = ['config', 'run', 'controller'];
-    // if (simpleParams.indexOf(this.params.generator) !== -1) {
-    // }
   }
 };
