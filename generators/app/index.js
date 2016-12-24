@@ -4,19 +4,19 @@ const Generator = require('yeoman-generator');
 const _ = require('lodash');
 const path = require('path');
 
-module.exports = Generator.extend({
-  initializing: function () {
+module.exports = class extends Generator {
+  initializing() {
     this.params = {
       appName: _.kebabCase(path.basename(process.cwd()))
     };
-  },
+  }
 
-  configuring: function() {
+  configuring() {
     this.config.set(this.params);
     this.config.save();
-  },
+  }
 
-  writing: function () {
+  writing() {
     this.fs.copyTpl(this.templatePath('root/_bower.json'), this.destinationPath('bower.json'), this.params);
     this.fs.copyTpl(this.templatePath('root/_package.json'), this.destinationPath('package.json'), this.params);
 
@@ -36,8 +36,9 @@ module.exports = Generator.extend({
     this.fs.copy(this.templatePath('app/index.html'), this.destinationPath('app/index.html'));
 
     this.fs.copy(this.templatePath('app/robots.txt'), this.destinationPath('app/robots.txt'));
-  },
-  install: function () {
+  }
+
+  install() {
     this.installDependencies();
-  },
-});
+  }
+};
