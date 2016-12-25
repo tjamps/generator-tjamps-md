@@ -70,6 +70,10 @@ module.exports = class extends Generator {
         name: 'API service - Create a new service using $resource',
         value: 'api',
         short: 'API service'
+      }, {
+        name: 'Service - Create a new service using a factory',
+        value: 'servicef',
+        short: 'Service (factory)'
       }],
       when: this.options.generator === '',
       store: true,
