@@ -58,6 +58,10 @@ module.exports = class extends Generator {
         name: 'Controller - Create a new controller',
         value: 'controller',
         short: 'Controller'
+      }, {
+        name: 'Directive - Create a new directive',
+        value: 'directive',
+        short: 'Controller'
       }],
       when: this.options.generator === '',
       store: true,
