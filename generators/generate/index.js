@@ -66,6 +66,10 @@ module.exports = class extends Generator {
         name: 'ui-route - Create a new ui-route file',
         value: 'uiroute',
         short: 'ui-route'
+      }, {
+        name: 'API service - Create a new service using $resource',
+        value: 'api',
+        short: 'API service'
       }],
       when: this.options.generator === '',
       store: true,
