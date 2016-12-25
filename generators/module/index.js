@@ -22,4 +22,9 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(this.templatePath('module.js'), this.destinationPath(filename), {moduleName: moduleName});
   }
+
+  end() {
+    var moduleName = utils.generateModuleName(this.options.componentName);
+    this.log('Module "' + moduleName + '" created, do not forget to add it as a dependency to your app.module.js');
+  }
 };
