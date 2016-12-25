@@ -20,7 +20,7 @@ module.exports = class extends Generator {
     var component = this.options.componentName;
     var filename = utils.generateFilename(component, 'api');
     var moduleName = utils.generateModuleName(component);
-    var serviceName = _.camelCase(moduleName) + 'Api';
+    var serviceName = utils.generateBasename(component) + 'Api';
 
     this.fs.copyTpl(this.templatePath('api.js'), this.destinationPath(filename), {moduleName: moduleName, serviceName: serviceName});
   }
