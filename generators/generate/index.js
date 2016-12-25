@@ -62,6 +62,10 @@ module.exports = class extends Generator {
         name: 'Directive - Create a new directive',
         value: 'directive',
         short: 'Controller'
+      }, {
+        name: 'ui-route - Create a new ui-route file',
+        value: 'uiroute',
+        short: 'ui-route'
       }],
       when: this.options.generator === '',
       store: true,
