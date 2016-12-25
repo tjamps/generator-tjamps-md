@@ -426,6 +426,29 @@ module.exports = function(grunt) {
           dest: '<%= yeoman.app %>/components/app'
         }]
       }
+    },
+
+    // Inject JS source files
+    injector: {
+      app: {
+        options: {
+          ignorePath: 'app/',
+          relative: true,
+          // Make sure we load '.module.js' files first
+          sort: function(a, b) {
+            if (a.indexOf('.module.js') !== -1 && b.indexOf('.module.js') === -1) {
+              return -1;
+            } else if (b.indexOf('.module.js') !== -1 && a.indexOf('.module.js') === -1) {
+              return 1;
+            }
+
+            return a.localeCompare(b);
+          }
+        },
+        files: {
+          '<%= yeoman.app %>/index.html': ['<%= yeoman.app %>/components/**/*.js'],
+        }
+      }
     }
   });
 
@@ -442,6 +465,7 @@ module.exports = function(grunt) {
       'clean:server',
       'less',
       'wiredep',
+      'injector',
       'concurrent:server',
       'postcss:server',
       'connect:livereload',
@@ -468,6 +492,7 @@ module.exports = function(grunt) {
     'clean:dist',
     'less',
     'replace:dist',
+    'injector',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
