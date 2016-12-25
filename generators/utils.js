@@ -5,7 +5,7 @@ const _ = require('lodash');
 /**
  *
  * @param componentName
- * @returns {{moduleName: string, directory: string, filenameBase: string}}
+ * @returns {{baseName: string, directory: string, filenameBase: string, module: string}}
  */
 function generateComponentMeta(componentName) {
   return {
@@ -22,10 +22,10 @@ function generateComponentMeta(componentName) {
  * @param type
  * @returns {string}
  */
-function generateFilename(componentName, type) {
+function generateFilename(componentName, type, extension) {
   var meta = generateComponentMeta(componentName);
 
-  return meta.directory + meta.filenameBase + '.' + type + '.js';
+  return meta.directory + meta.filenameBase + '.' + type + (extension ? '.' + extension : '.js');
 }
 
 /**
