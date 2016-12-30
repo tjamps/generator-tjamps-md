@@ -3,11 +3,11 @@
 
   angular
     .module('app')
-    .run(['$rootScope', function appRun($rootScope) {
+    .run(['$rootScope', '$log', function appRun($rootScope, $log) {
       $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
-        console.error(error);
+        $log.error(error);
       });
 
-      console.log('App live and running.');
+      $log.log('App live and running.');
     }]);
 })();
