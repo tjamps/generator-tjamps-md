@@ -14,5 +14,6 @@
     'ngStorage',
     'angular-loading-bar',
     // Custom modules
+    'app.api'
   ]);
 })();
