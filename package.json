@@ -1,6 +1,6 @@
 {
   "name": "generator-tjamps-md",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "description": "Build amazing application with Angular Material. Heavily influenced by generator-angular <3. By tjamps.",
   "repository": "https://github.com/tjamps/generator-tjamps-md",
