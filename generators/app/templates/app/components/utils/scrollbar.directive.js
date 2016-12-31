@@ -55,7 +55,6 @@
 
         // Set watcher to update scrollbar when content changes
         scope.$watch('scrollbarWatch', function(newValue, oldValue) {
-          console.log('watch');
           if (newValue !== oldValue) {
             delayedUpdate();
           }
@@ -63,7 +62,6 @@
 
         // Set watcher to update scrollbar when content changes
         scope.$watchCollection('scrollbarWatchCollection', function(newValue, oldValue) {
-          console.log('watchCollection');
           if (newValue !== oldValue) {
             delayedUpdate();
           }
