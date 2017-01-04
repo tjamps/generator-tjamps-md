@@ -32,6 +32,10 @@ module.exports = class extends Generator {
       type: 'confirm',
       name: 'controllerAs',
       message: 'Make controllerAs compatible ?',
+    }, {
+      type: 'confirm',
+      name: 'template',
+      message: 'Generate empty HTML template ?',
     }];
 
     return this.prompt(prompts).then(function(answers) {
@@ -42,6 +46,10 @@ module.exports = class extends Generator {
   writing() {
     var filename = this._generateControllerFilename(this.options.componentName, this.params.name);
     this.params.moduleName = utils.generateModuleName(this.options.componentName);
+
+    if (this.params.template) {
+      this.fs.write(this._generateTemplatePath(this.options.componentName, this.params.name), '');
+    }
 
     this.fs.copyTpl(this.templatePath('controller.js'), this.destinationPath(filename), {params: this.params});
   }
@@ -63,5 +71,11 @@ module.exports = class extends Generator {
     var meta = utils.generateComponentMeta(component);
 
     return meta.directory + _.kebabCase(name) + '.controller.js';
+  }
+
+  _generateTemplatePath(component, name) {
+    var meta = utils.generateComponentMeta(component);
+
+    return meta.directory + _.kebabCase(name) + '.html';
   }
 };

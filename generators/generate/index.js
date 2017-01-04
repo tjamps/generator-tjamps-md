@@ -93,7 +93,7 @@ module.exports = class extends Generator {
    *
    */
   default() {
-    if (this.params.generator === 'module' || ! this.fs.exists(utils.generateFilename(this.params.component, 'module'))) {
+    if (this.params.generator !== 'module' && ! this.fs.exists(utils.generateFilename(this.params.component, 'module'))) {
       this.composeWith(require.resolve('../module'), {componentName: this.params.component});
     }
 
